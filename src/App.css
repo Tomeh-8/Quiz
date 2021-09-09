@@ -50,9 +50,14 @@ body{
 
  .question-amount ul li{
    display: flex;
-   justify-content: space-around;
-   margin-bottom: 10px;
+   justify-content:space-between;
+   margin-bottom: 5px;
+   height: 30px;
+   padding: 3px;
+   border-radius: 5px;
  }
+
+
 
  .answer-section{
    width: 300px;
@@ -92,10 +97,69 @@ body{
 .amount-list{
  padding: 10px;
  margin: 10px;
- font-size: 22px;
+ font-size: 20px;
  font-weight: 400;
+
+}
+
+.amount-list .active{
+  background-color: violet;
 }
 
 .amount-align{
   margin-top: 50px;
+}
+
+.answer-section:hover{
+  background-color: rgb(168, 108, 59);
+}
+
+.answer-section:active{
+background-color: darkblue;
+}
+
+.answer-section.active{
+ background-color: darkblue;
+}
+
+.answer-section.correct{
+  animation: correct 3s ease-in-out;
+}
+
+@keyframes correct {
+  0%,
+  25%,
+  45%{
+    background-color: darkgoldenrod;
+  }
+  20%,
+  40%,
+  60%{
+    background-color: darkmagenta;
+  }
+  61%,
+  100%{
+    background-color: green;
+  }
+}
+
+.answer-section.wrong{
+  animation: wrong 3s ease-in-out;
+}
+
+@keyframes wrong {
+  0%,
+  25%,
+  45%{
+    background-color: darkgoldenrod;
+  }
+  20%,
+  40%,
+  60%{
+    background-color: darkmagenta;
+  }
+  61%,
+  100%{
+    background-color: red;
+  }
 }
