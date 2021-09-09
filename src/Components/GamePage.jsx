@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react';
+import useSound from "use-sound";
+import startGame from "../audio/startGame.wav";
 import Questions from './Questions';
-import Countdown from './Countdown'
+import Countdown from './Countdown';
 
 function GamePage(data) {
     const monies = data.money;
@@ -8,6 +10,9 @@ function GamePage(data) {
     const [questionNumber, setQuestionNumber] = useState(1);
     const [won, setWon] = useState("$ 0");
     const [stopClock, setStopClock] = useState(30);
+    const [playGame] = useSound(startGame);
+    
+
     
     useEffect(() => {
        questionNumber > 1 && setWon(monies.find(q => q.id === questionNumber - 1).amount);
@@ -17,7 +22,7 @@ function GamePage(data) {
         <div className ="main-page">
             <div className="question-page">
             {gameStop? (
-                 <h1>you won {won}</h1>
+                 <div className = "notification">you won {won}</div>
             ): (
                 <>               
                 <Countdown setGameStop = {setGameStop} questionNumber={questionNumber} setStopClock = {setStopClock} stopClock = {stopClock}/>

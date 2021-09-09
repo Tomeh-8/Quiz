@@ -96,8 +96,7 @@ body{
 
 .amount-list{
  padding: 10px;
- margin: 10px;
- font-size: 20px;
+ font-size: 15px;
  font-weight: 400;
 
 }
@@ -107,7 +106,7 @@ body{
 }
 
 .amount-align{
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .answer-section:hover{
@@ -120,6 +119,12 @@ background-color: darkblue;
 
 .answer-section.active{
  background-color: darkblue;
+}
+
+.notification{
+  color: antiquewhite;
+  margin-top: 100px;
+  font-size: 40px;
 }
 
 .answer-section.correct{
@@ -161,5 +166,56 @@ background-color: darkblue;
   61%,
   100%{
     background-color: red;
+  }
+}
+
+@media screen and (max-width:700px) {
+ .question-page{
+    justify-content: flex-start;
+    width: 70%;
+    padding-left: 30px;
+  }
+
+  .question-amount{
+    width:30%;
+  }
+
+  .count{
+    width:50px;
+    height: 50px;
+    left: 5px;
+    top: 5px;
+    font-size: 16px;
+  }
+
+  .question-section{
+     width: 300px;
+     margin-left: 10px;
+     font-size: 15px;
+     padding: 15px;
+  }
+
+  .answer-section{
+    width: 150px;
+    font-size: 15px;
+    height: 30px;
+    padding: 7px;
+  }
+
+  .answer-align{
+    width:350px;
+  }
+
+  .amount-align{
+    margin-top: 5px;
+  }
+
+  .amount-list{
+    font-size: 12px;
+  }
+
+  .question-amount ul li{
+    justify-content: space-between;
+    height: 15px;
   }
 }
