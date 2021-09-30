@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
-import useSound from "use-sound";
-import rightAnswer from "../audio/cheta.mp3";
-import wrongAnswer from "../audio/wrongAnswer.wav";
+//import useSound from "use-sound";
+//import rightAnswer from "../audio/cheta.mp3";
+//import wrongAnswer from "../audio/wrongAnswer.wav";
 
 function Questions(data) {
   console.log(data);
@@ -13,8 +13,8 @@ function Questions(data) {
     const [className, setClassName] =  useState("answer-section");
     const [chosenAnswer, setChosenAnswer] = useState(null);
     const [stage, setStage] = useState(null);
-    const [incorrect] = useSound(wrongAnswer);
-    const [correct] = useSound(rightAnswer);
+    //const [incorrect] = useSound(wrongAnswer);
+    //const [correct] = useSound(rightAnswer);
   
     useEffect(() => {
         setStage(mainData[questionNumber - 1]);
@@ -30,12 +30,10 @@ function Questions(data) {
 
       setTimeout(() => {
         if (answer.correct) {
-          correct();
           setQuestionNumber(questionNumber + 1);
           console.log("correct");
           setChosenAnswer(null);
         }else{
-          incorrect();
           setGameStop(true);
            console.log("fail")
         }
